@@ -1,0 +1,54 @@
+package com.example.demo.jobscheduler;
+
+import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+@Service
+@RequiredArgsConstructor
+public class ScheduledMessageService {
+
+    private final ScheduledMessageRepository repository;
+
+    // Save a new scheduled message
+    public ScheduledMessage scheduleMessage(ScheduledMessage message) {
+        message.setKafkaTopic("JobSchedulerTopic");
+        return repository.save(message);
+    }
+
+    // ✅ Find scheduled message by scheduledTime
+    public Optional<ScheduledMessage> findByScheduledTime(LocalDateTime scheduledTime) {
+        return repository.findByScheduledTime(scheduledTime);
+    }
+
+
+
+    // Get all pending messages before a given time
+    public List<ScheduledMessage> getPendingMessagesBefore(LocalDateTime time) {
+        return repository.findByStatusAndScheduledTimeBefore("PENDING", time);
+    }
+
+    // 3️⃣ Update message status after sending to Kafka
+    /*public void updateMessageStatus(UUID id, String status) {
+        repository.findById(id).ifPresent(msg -> {
+            msg.setStatus(status);
+            repository.save(msg);
+        });
+    }*/
+    @Transactional
+    public void updateMessageStatus(UUID id, String status) {
+        Optional<ScheduledMessage> optionalMessage = repository.findById(id);
+        if (optionalMessage.isPresent()) {
+            ScheduledMessage msg = optionalMessage.get();
+            msg.setStatus(status);
+            repository.save(msg);
+        } else {
+            throw new RuntimeException("ScheduledMessage not found with ID: " + id);
+        }
+    }
+}
