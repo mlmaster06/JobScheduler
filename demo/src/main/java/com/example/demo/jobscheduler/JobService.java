@@ -32,52 +32,6 @@ public class JobService {
 
     }
 
-    // Create a new job
-    /*public Job createJob(Job job) {
-        job.setUpdatedAt(LocalDateTime.now());
-        return jobRepository.save(job);
-    }*/
-
-    /*@Transactional
-    public Job createJob(Job job) {
-        job.setUpdatedAt(LocalDateTime.now());
-        Job savedJob = jobRepository.save(job);
-
-        // Create a corresponding scheduled message
-        ScheduledMessage scheduledMessage = ScheduledMessage.builder()
-                .messageBody(job.getMessageBody())
-                .metadata("{}") // Default empty JSON
-                .scheduledTime(job.getScheduleTime() != null ? job.getScheduleTime() : LocalDateTime.now())
-                .status("PENDING")
-                .kafkaTopic("JobSchedulerTopic") // Set a default Kafka topic or determine dynamically
-                .build();
-
-        //scheduledMessageRepository.save(scheduledMessage);
-        scheduledMessageService.scheduleMessage(scheduledMessage);
-        return savedJob;
-    }*/
-
-    /*@Transactional
-    public Job createJob(Job job) {
-        job.setUpdatedAt(LocalDateTime.now());
-        Job savedJob = jobRepository.save(job);
-
-        // Construct metadata JSON with binary_path
-        String binaryPath = job.getBinaryPath();
-        String metadataJson = "{\"binary_path\": \"" + binaryPath + "\"}";
-
-        // Create a corresponding scheduled message with correct metadata
-        ScheduledMessage scheduledMessage = ScheduledMessage.builder()
-                .messageBody(job.getMessageBody())
-                .metadata(metadataJson) // ✅ Store binary_path in metadata
-                .scheduledTime(job.getScheduleTime() != null ? job.getScheduleTime() : LocalDateTime.now())
-                .status("PENDING")
-                .kafkaTopic("JobSchedulerTopic") // Set a default Kafka topic or determine dynamically
-                .build();
-
-        scheduledMessageService.scheduleMessage(scheduledMessage);
-        return savedJob;
-    }*/
 
     @Transactional
     public Job createJob(Job job, MultipartFile file) throws Exception {
