@@ -146,12 +146,12 @@ public class Job {
     @Column(name = "name", nullable = false, length = 255)
     private String name;
 
-    private String minioFileUrl;
+    //private String minioFileUrl;
 
     @Column(name = "binary_type", nullable = false, length = 50)
     private String binaryType; // JAR/NPM
 
-    @Column(name = "binary_path", nullable = false, length = 500)
+    @Column(name = "binary_path", length = 500)
     private String binaryPath; // File path in MinIO
 
     @Column(name = "schedule_type", nullable = false, length = 50)
@@ -169,7 +169,7 @@ public class Job {
     /*@Column(name = "message_body", columnDefinition = "TEXT")
     private String messageBody; // New field for storing message data*/
 
-    @Column(name = "message_body", columnDefinition = "TEXT")
+    @Column(name = "message_body", columnDefinition = "TEXT", nullable = true)
     private String messageBody;
 
 

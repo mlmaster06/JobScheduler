@@ -1,98 +1,133 @@
-import React, { useEffect } from "react";
-import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
-import { getJobs, addJob } from "../store/jobSlice";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import {
-  Button,
-  TextField,
-  MenuItem,
-  Select,
-  FormControl,
-  InputLabel,
-  Card,
-  CardContent,
-  Typography,
-} from "@mui/material";
-
-const schema = yup.object().shape({
-  jobName: yup.string().required("Job name is required"),
-  scheduleType: yup.string().required("Schedule type is required"),
-  time: yup.string().when("scheduleType", {
-    is: "specificTime",
-    then: yup.string().required("Time is required"),
-  }),
-});
+import React, { useState } from "react";
+import { Button, TextField, MenuItem, Select, FormControl, InputLabel, Card, CardContent, Typography } from "@mui/material";
+import axios from "axios";
 
 const JobScheduler = () => {
-  const dispatch = useDispatch();
-  const { jobs, status } = useSelector((state) => state.jobs);
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
+    const [jobs, setJobs] = useState([]);
+    const [formData, setFormData] = useState({
+        name: "",
+        binaryType: "JAR",
+        binaryPath: null,
+        scheduleType: "Immediate",
+        scheduleTime: "",
+        recurrencePattern: "",
+        timezone: "UTC",
+        messageBody: "",
+    });
 
-  useEffect(() => {
-    dispatch(getJobs());
-  }, [dispatch]);
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
 
-  const onSubmit = (data) => {
-    dispatch(addJob(data));
-    reset();
-  };
+    const handleFileChange = (e) => {
+        setFormData({ ...formData, binaryPath: e.target.files[0] });
+    };
 
-  return (
-    <div style={{ maxWidth: 500, margin: "auto", padding: 20 }}>
-      <Typography variant="h4" align="center" gutterBottom>
-        Job Scheduler
-      </Typography>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        style={{ display: "flex", flexDirection: "column", gap: "16px" }}
-      >
-        <TextField
-          label="Job Name"
-          {...register("jobName")}
-          error={!!errors.jobName}
-          helperText={errors.jobName?.message}
-        />
-        <FormControl>
-          <InputLabel>Schedule Type</InputLabel>
-          <Select {...register("scheduleType")}>
-            <MenuItem value="specificTime">Specific Time</MenuItem>
-            <MenuItem value="immediate">Immediate</MenuItem>
-            <MenuItem value="recurring">Recurring</MenuItem>
-          </Select>
-        </FormControl>
-        <Button type="submit" variant="contained" color="primary" fullWidth>
-          Schedule Job
-        </Button>
-      </form>
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-      <Typography variant="h5" align="center" marginTop={3}>
-        Scheduled Jobs
-      </Typography>
-      {status === "loading" ? (
-        <p>Loading...</p>
-      ) : jobs.length === 0 ? (
-        <p>No jobs scheduled yet.</p>
-      ) : (
-        jobs.map((job) => (
-          <Card key={job.id} sx={{ marginTop: 2, padding: 2 }}>
-            <CardContent>
-              <Typography variant="h6">{job.jobName}</Typography>
-              <Typography variant="body1">Type: {job.scheduleType}</Typography>
-            </CardContent>
-          </Card>
-        ))
-      )}
-    </div>
-  );
+        // Form validation
+        if (formData.scheduleType === "One-Time" && !formData.scheduleTime) {
+            alert("Schedule Time is required for One-Time jobs.");
+            return;
+        }
+        if (formData.scheduleType === "Recurring" && !formData.recurrencePattern) {
+            alert("Recurrence Pattern is required for Recurring jobs.");
+            return;
+        }
+
+        const jobData = new FormData();
+        jobData.append("name", formData.name);
+        jobData.append("binaryType", formData.binaryType);
+        jobData.append("binaryPath", formData.binaryPath);
+        jobData.append("scheduleType", formData.scheduleType);
+        jobData.append("scheduleTime", formData.scheduleType === "One-Time" ? formData.scheduleTime : "");
+        jobData.append("recurrencePattern", formData.scheduleType === "Recurring" ? formData.recurrencePattern : "");
+        jobData.append("timezone", formData.timezone);
+        jobData.append("messageBody", formData.messageBody);
+
+        try {
+            const response = await axios.post("http://127.0.0.1:8080/api/jobs", jobData, {
+                headers: { "Content-Type": "multipart/form-data" },
+            });
+            //console.log(response)
+            alert("Job scheduled successfully!");
+            setJobs([...jobs, response.data]);
+
+        } catch (error) {
+            alert("Failed to schedule job.");
+            console.error(error);
+        }
+    };
+
+    return (
+        <div style={{ padding: "20px", maxWidth: "500px", margin: "auto" }}>
+            <Typography variant="h4" gutterBottom>Job Scheduler</Typography>
+            <form onSubmit={handleSubmit}>
+                <TextField fullWidth margin="normal" label="Job Name" name="name" value={formData.name} onChange={handleChange} required />
+
+                <FormControl fullWidth margin="normal">
+                    <InputLabel>Binary Type</InputLabel>
+                    <Select name="binaryType" value={formData.binaryType} onChange={handleChange}>
+                        <MenuItem value="JAR">JAR</MenuItem>
+                        <MenuItem value="NPM">NPM</MenuItem>
+                    </Select>
+                </FormControl>
+
+                <input type="file" name="binaryPath" onChange={handleFileChange} required style={{ margin: "10px 0" }} />
+
+                <FormControl fullWidth margin="normal">
+                    <InputLabel>Schedule Type</InputLabel>
+                    <Select name="scheduleType" value={formData.scheduleType} onChange={handleChange}>
+                        <MenuItem value="Immediate">Immediate</MenuItem>
+                        <MenuItem value="One-Time">One-Time</MenuItem>
+                        <MenuItem value="Recurring">Recurring</MenuItem>
+                    </Select>
+                </FormControl>
+
+                {formData.scheduleType === "One-Time" && (
+                    <TextField fullWidth margin="normal" type="datetime-local" label="Schedule Time" name="scheduleTime" value={formData.scheduleTime} onChange={handleChange} required />
+                )}
+
+                {formData.scheduleType === "Recurring" && (
+                    <TextField fullWidth margin="normal" label="Recurrence Pattern (Cron)" name="recurrencePattern" value={formData.recurrencePattern} onChange={handleChange} required />
+                )}
+
+                <FormControl fullWidth margin="normal">
+                    <InputLabel>Timezone</InputLabel>
+                    <Select name="timezone" value={formData.timezone} onChange={handleChange}>
+                        <MenuItem value="UTC">UTC</MenuItem>
+                        <MenuItem value="America/New_York">America/New_York</MenuItem>
+                        <MenuItem value="Asia/Kolkata">Asia/Kolkata</MenuItem>
+                    </Select>
+                </FormControl>
+
+                <TextField fullWidth margin="normal" label="Message Body (Optional)" name="messageBody" value={formData.messageBody} onChange={handleChange} />
+
+                <Button fullWidth variant="contained" type="submit" sx={{ mt: 2 }}>Schedule Job</Button>
+            </form>
+
+            <Typography variant="h5" gutterBottom sx={{ mt: 3 }}>Scheduled Jobs</Typography>
+            {jobs.length === 0 ? (
+                <Typography>No jobs scheduled yet.</Typography>
+            ) : (
+                jobs.map((job) => (
+                    <Card key={job.id} sx={{ mt: 2 }}>
+                        <CardContent>
+                            <Typography><strong>Name:</strong> {job.name}</Typography>
+                            <Typography><strong>Binary Type:</strong> {job.binaryType}</Typography>
+                            <Typography><strong>Schedule Type:</strong> {job.scheduleType}</Typography>
+                            {job.scheduleType === "One-Time" && <Typography><strong>Schedule Time:</strong> {job.scheduleTime}</Typography>}
+                            {job.scheduleType === "Recurring" && <Typography><strong>Recurrence:</strong> {job.recurrencePattern}</Typography>}
+                            <Typography><strong>Timezone:</strong> {job.timezone}</Typography>
+                            {job.messageBody && <Typography><strong>Message:</strong> {job.messageBody}</Typography>}
+                        </CardContent>
+                    </Card>
+                ))
+            )}
+        </div>
+    );
 };
 
 export default JobScheduler;

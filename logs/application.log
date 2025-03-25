@@ -1,0 +1,644 @@
+2025-03-26T01:07:29.339+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] c.example.demo.JobSchedulerApplication   : Starting JobSchedulerApplication using Java 18.0.2 with PID 1432 (C:\Users\askha\OneDrive\Desktop\Project\demo\target\classes started by askha in C:\Users\askha\OneDrive\Desktop\Project)
+2025-03-26T01:07:29.364+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] c.example.demo.JobSchedulerApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-03-26T01:07:29.486+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-26T01:07:29.496+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-26T01:07:32.182+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-26T01:07:32.637+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 421 ms. Found 3 JPA repository interfaces.
+2025-03-26T01:07:35.954+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-26T01:07:35.988+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-26T01:07:35.990+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-26T01:07:36.204+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-26T01:07:36.206+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6708 ms
+2025-03-26T01:07:37.163+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-26T01:07:37.819+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2e6e8a0c
+2025-03-26T01:07:37.823+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-26T01:07:38.221+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-26T01:07:38.453+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-26T01:07:38.573+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-26T01:07:39.897+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-26T01:07:40.109+05:30  WARN 1432 --- [Job_Scheduler] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-26T01:07:40.146+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-26T01:07:40.162+05:30 DEBUG 1432 --- [Job_Scheduler] [restartedMain] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@465494bc) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@e93cca7)
+2025-03-26T01:07:40.164+05:30 DEBUG 1432 --- [Job_Scheduler] [restartedMain] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@60288385) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@6c6b7c10)
+2025-03-26T01:07:42.901+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-26T01:07:43.160+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-26T01:07:45.833+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2025-03-26T01:07:45.865+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2025-03-26T01:07:45.867+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2025-03-26T01:07:45.868+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2025-03-26T01:07:45.871+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2025-03-26T01:07:45.871+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2025-03-26T01:07:45.871+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2025-03-26T01:07:45.874+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@6cda7726
+2025-03-26T01:07:46.284+05:30  WARN 1432 --- [Job_Scheduler] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-26T01:07:46.834+05:30  WARN 1432 --- [Job_Scheduler] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: bb8798c0-7392-4a58-a128-829089a970c8
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-26T01:07:46.965+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-03-26T01:07:48.290+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-03-26T01:07:50.670+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] ctiveUserDetailsServiceAutoConfiguration : 
+
+Using generated security password: bb8798c0-7392-4a58-a128-829089a970c8
+
+2025-03-26T01:07:50.923+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-03-26T01:07:51.241+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = Job_Scheduler-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-03-26T01:07:51.462+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.8.1
+2025-03-26T01:07:51.462+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 70d6ff42debf7e17
+2025-03-26T01:07:51.463+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1742931471459
+2025-03-26T01:07:52.691+05:30  WARN 1432 --- [Job_Scheduler] [kafka-admin-client-thread | Job_Scheduler-admin-0] o.a.k.clients.admin.KafkaAdminClient     : [AdminClient clientId=Job_Scheduler-admin-0] The DescribeTopicPartitions API is not supported, using Metadata API to describe topics.
+2025-03-26T01:07:52.718+05:30  INFO 1432 --- [Job_Scheduler] [kafka-admin-client-thread | Job_Scheduler-admin-0] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for Job_Scheduler-admin-0 unregistered
+2025-03-26T01:07:52.728+05:30  INFO 1432 --- [Job_Scheduler] [kafka-admin-client-thread | Job_Scheduler-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2025-03-26T01:07:52.729+05:30  INFO 1432 --- [Job_Scheduler] [kafka-admin-client-thread | Job_Scheduler-admin-0] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-03-26T01:07:52.729+05:30  INFO 1432 --- [Job_Scheduler] [kafka-admin-client-thread | Job_Scheduler-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2025-03-26T01:07:52.745+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-03-26T01:07:52.746+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7d00af2e]]
+2025-03-26T01:07:52.749+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-03-26T01:07:52.776+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-26T01:07:52.858+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-job-scheduler-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = job-scheduler-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2025-03-26T01:07:53.173+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2025-03-26T01:07:53.323+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.8.1
+2025-03-26T01:07:53.323+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 70d6ff42debf7e17
+2025-03-26T01:07:53.324+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1742931473323
+2025-03-26T01:07:53.328+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-job-scheduler-group-1, groupId=job-scheduler-group] Subscribed to topic(s): JobSchedulerTopic
+2025-03-26T01:07:53.344+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.s.s.quartz.SchedulerFactoryBean        : Starting Quartz Scheduler now
+2025-03-26T01:07:53.344+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2025-03-26T01:07:53.372+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-job-scheduler-group-1, groupId=job-scheduler-group] Cluster ID: a1PRjsI8RpCKOwiw4U07hA
+2025-03-26T01:07:53.374+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] c.example.demo.JobSchedulerApplication   : Started JobSchedulerApplication in 25.224 seconds (process running for 27.696)
+2025-03-26T01:07:53.402+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-scheduler-group-1, groupId=job-scheduler-group] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+2025-03-26T01:07:53.407+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-scheduler-group-1, groupId=job-scheduler-group] (Re-)joining group
+2025-03-26T01:07:53.522+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-scheduler-group-1, groupId=job-scheduler-group] Request joining group due to: need to re-join with the given member-id: consumer-job-scheduler-group-1-ffbc160c-93bd-40a1-8774-386ded07f679
+2025-03-26T01:07:53.523+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-scheduler-group-1, groupId=job-scheduler-group] (Re-)joining group
+2025-03-26T01:07:53.590+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-scheduler-group-1, groupId=job-scheduler-group] Successfully joined group with generation Generation{generationId=99, memberId='consumer-job-scheduler-group-1-ffbc160c-93bd-40a1-8774-386ded07f679', protocol='range'}
+2025-03-26T01:07:53.607+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-scheduler-group-1, groupId=job-scheduler-group] Finished assignment for group at generation 99: {consumer-job-scheduler-group-1-ffbc160c-93bd-40a1-8774-386ded07f679=Assignment(partitions=[JobSchedulerTopic-0])}
+2025-03-26T01:07:53.756+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-scheduler-group-1, groupId=job-scheduler-group] Successfully synced group in generation Generation{generationId=99, memberId='consumer-job-scheduler-group-1-ffbc160c-93bd-40a1-8774-386ded07f679', protocol='range'}
+2025-03-26T01:07:53.756+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-scheduler-group-1, groupId=job-scheduler-group] Notifying assignor about the new Assignment(partitions=[JobSchedulerTopic-0])
+2025-03-26T01:07:53.763+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-job-scheduler-group-1, groupId=job-scheduler-group] Adding newly assigned partitions: JobSchedulerTopic-0
+2025-03-26T01:07:53.901+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition JobSchedulerTopic-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 0 rack: null)], epoch=0}}
+2025-03-26T01:07:53.903+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : job-scheduler-group: partitions assigned: [JobSchedulerTopic-0]
+2025-03-26T01:08:51.027+05:30  INFO 1432 --- [Job_Scheduler] [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2025-03-26T01:10:05.446+05:30  INFO 1432 --- [Job_Scheduler] [RMI TCP Connection(4)-192.168.29.188] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-26T01:10:05.451+05:30  INFO 1432 --- [Job_Scheduler] [RMI TCP Connection(4)-192.168.29.188] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-26T01:10:05.485+05:30  INFO 1432 --- [Job_Scheduler] [RMI TCP Connection(4)-192.168.29.188] o.s.web.servlet.DispatcherServlet        : Completed initialization in 34 ms
+2025-03-26T01:16:53.513+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-job-scheduler-group-1, groupId=job-scheduler-group] Node -1 disconnected.
+2025-03-26T01:26:53.758+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-job-scheduler-group-1, groupId=job-scheduler-group] Node -1 disconnected.
+2025-03-26T01:27:36.009+05:30  INFO 1432 --- [Job_Scheduler] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2025-03-26T01:27:36.052+05:30  INFO 1432 --- [Job_Scheduler] [Thread-5] org.quartz.core.QuartzScheduler          : Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2025-03-26T01:27:36.084+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-job-scheduler-group-1, groupId=job-scheduler-group] Revoke previously assigned partitions JobSchedulerTopic-0
+2025-03-26T01:27:36.096+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : job-scheduler-group: partitions revoked: [JobSchedulerTopic-0]
+2025-03-26T01:27:36.100+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-scheduler-group-1, groupId=job-scheduler-group] Member consumer-job-scheduler-group-1-ffbc160c-93bd-40a1-8774-386ded07f679 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2025-03-26T01:27:36.105+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-scheduler-group-1, groupId=job-scheduler-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-03-26T01:27:36.105+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-scheduler-group-1, groupId=job-scheduler-group] Request joining group due to: consumer pro-actively leaving the group
+2025-03-26T01:27:36.105+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-job-scheduler-group-1, groupId=job-scheduler-group] Unsubscribed all topics or patterns and assigned partitions
+2025-03-26T01:27:36.123+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-scheduler-group-1, groupId=job-scheduler-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-03-26T01:27:36.124+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-scheduler-group-1, groupId=job-scheduler-group] Request joining group due to: consumer pro-actively leaving the group
+2025-03-26T01:27:36.552+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2025-03-26T01:27:36.553+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-03-26T01:27:36.553+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2025-03-26T01:27:36.555+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2025-03-26T01:27:36.575+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-job-scheduler-group-1 unregistered
+2025-03-26T01:27:36.578+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : job-scheduler-group: Consumer stopped
+2025-03-26T01:27:36.592+05:30  INFO 1432 --- [Job_Scheduler] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-26T01:27:36.930+05:30  INFO 1432 --- [Job_Scheduler] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-03-26T01:27:36.939+05:30  INFO 1432 --- [Job_Scheduler] [Thread-5] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2025-03-26T01:27:36.939+05:30  INFO 1432 --- [Job_Scheduler] [Thread-5] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7d00af2e]]
+2025-03-26T01:27:36.939+05:30  INFO 1432 --- [Job_Scheduler] [Thread-5] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2025-03-26T01:27:36.962+05:30  INFO 1432 --- [Job_Scheduler] [Thread-5] org.quartz.core.QuartzScheduler          : Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutting down.
+2025-03-26T01:27:36.962+05:30  INFO 1432 --- [Job_Scheduler] [Thread-5] org.quartz.core.QuartzScheduler          : Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2025-03-26T01:27:36.964+05:30  INFO 1432 --- [Job_Scheduler] [Thread-5] org.quartz.core.QuartzScheduler          : Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutdown complete.
+2025-03-26T01:27:36.965+05:30  INFO 1432 --- [Job_Scheduler] [Thread-5] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2025-03-26T01:27:36.974+05:30  INFO 1432 --- [Job_Scheduler] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-26T01:27:36.996+05:30  INFO 1432 --- [Job_Scheduler] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-03-26T01:27:37.003+05:30  INFO 1432 --- [Job_Scheduler] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-03-26T01:27:37.321+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] c.example.demo.JobSchedulerApplication   : Starting JobSchedulerApplication using Java 18.0.2 with PID 1432 (C:\Users\askha\OneDrive\Desktop\Project\demo\target\classes started by askha in C:\Users\askha\OneDrive\Desktop\Project)
+2025-03-26T01:27:37.321+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] c.example.demo.JobSchedulerApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-03-26T01:27:38.801+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-26T01:27:38.848+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 3 JPA repository interfaces.
+2025-03-26T01:27:39.492+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-26T01:27:39.498+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-26T01:27:39.498+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-26T01:27:39.620+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-26T01:27:39.621+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2292 ms
+2025-03-26T01:27:40.033+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-03-26T01:27:40.225+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@8b569fb
+2025-03-26T01:27:40.226+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-03-26T01:27:40.357+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-26T01:27:40.373+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-26T01:27:40.454+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-26T01:27:40.490+05:30  WARN 1432 --- [Job_Scheduler] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-26T01:27:40.498+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-26T01:27:40.500+05:30 DEBUG 1432 --- [Job_Scheduler] [restartedMain] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@c37a2cf) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@32f13df9)
+2025-03-26T01:27:40.501+05:30 DEBUG 1432 --- [Job_Scheduler] [restartedMain] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@7b3800e8) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@4c7e1bf6)
+2025-03-26T01:27:40.822+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-26T01:27:40.901+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-26T01:27:40.932+05:30  WARN 1432 --- [Job_Scheduler] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kafkaListeners': Resolution of declared constructors on bean Class [com.example.demo.config.KafkaListeners] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@68043169] failed
+2025-03-26T01:27:40.933+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-26T01:27:40.934+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-03-26T01:27:40.984+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-03-26T01:27:40.986+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-03-26T01:27:41.004+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-03-26T01:27:41.072+05:30 ERROR 1432 --- [Job_Scheduler] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'kafkaListeners': Resolution of declared constructors on bean Class [com.example.demo.config.KafkaListeners] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@68043169] failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:384) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1320) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1215) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1155) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1121) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1056) ~[spring-beans-6.2.3.jar:6.2.3]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.3.jar:6.2.3]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.3.jar:3.4.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.3.jar:3.4.3]
+	at com.example.demo.JobSchedulerApplication.main(JobSchedulerApplication.java:18) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.4.3.jar:3.4.3]
+Caused by: java.lang.NoClassDefFoundError: com/example/demo/jobscheduler/MinioService
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3405) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredConstructors(Class.java:2587) ~[na:na]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:379) ~[spring-beans-6.2.3.jar:6.2.3]
+	... 23 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.example.demo.jobscheduler.MinioService
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:488) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.4.3.jar:3.4.3]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	... 27 common frames omitted
+
+2025-03-26T01:31:05.854+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] c.example.demo.JobSchedulerApplication   : Starting JobSchedulerApplication using Java 18.0.2 with PID 1432 (C:\Users\askha\OneDrive\Desktop\Project\demo\target\classes started by askha in C:\Users\askha\OneDrive\Desktop\Project)
+2025-03-26T01:31:05.856+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] c.example.demo.JobSchedulerApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-03-26T01:31:08.763+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-26T01:31:08.809+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 3 JPA repository interfaces.
+2025-03-26T01:31:09.410+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-26T01:31:09.417+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-26T01:31:09.418+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-26T01:31:09.496+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2025-03-26T01:31:09.496+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3597 ms
+2025-03-26T01:31:09.819+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2025-03-26T01:31:10.044+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@55d537f
+2025-03-26T01:31:10.045+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2025-03-26T01:31:10.122+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-26T01:31:10.131+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-26T01:31:10.155+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-26T01:31:10.183+05:30  WARN 1432 --- [Job_Scheduler] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-26T01:31:10.186+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-26T01:31:10.188+05:30 DEBUG 1432 --- [Job_Scheduler] [restartedMain] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@57ecc1c4) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@6ca016be)
+2025-03-26T01:31:10.188+05:30 DEBUG 1432 --- [Job_Scheduler] [restartedMain] o.h.t.d.sql.spi.DdlTypeRegistry          : addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@3d5364f) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@2c4a8468)
+2025-03-26T01:31:10.386+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-26T01:31:10.471+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-26T01:31:11.238+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2025-03-26T01:31:11.242+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2025-03-26T01:31:11.242+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2025-03-26T01:31:11.242+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2025-03-26T01:31:11.242+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2025-03-26T01:31:11.244+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2025-03-26T01:31:11.244+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2025-03-26T01:31:11.244+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@d1a1c25
+2025-03-26T01:31:11.388+05:30  WARN 1432 --- [Job_Scheduler] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-26T01:31:11.557+05:30  WARN 1432 --- [Job_Scheduler] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 7371f172-cabf-4c2a-ad96-2f838866ddcf
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-03-26T01:31:11.565+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-03-26T01:31:12.081+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-03-26T01:31:13.049+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] ctiveUserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 7371f172-cabf-4c2a-ad96-2f838866ddcf
+
+2025-03-26T01:31:13.130+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-03-26T01:31:13.193+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = Job_Scheduler-admin-1
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-03-26T01:31:13.198+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.8.1
+2025-03-26T01:31:13.198+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 70d6ff42debf7e17
+2025-03-26T01:31:13.198+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1742932873197
+2025-03-26T01:31:13.291+05:30  WARN 1432 --- [Job_Scheduler] [kafka-admin-client-thread | Job_Scheduler-admin-1] o.a.k.clients.admin.KafkaAdminClient     : [AdminClient clientId=Job_Scheduler-admin-1] The DescribeTopicPartitions API is not supported, using Metadata API to describe topics.
+2025-03-26T01:31:13.294+05:30  INFO 1432 --- [Job_Scheduler] [kafka-admin-client-thread | Job_Scheduler-admin-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for Job_Scheduler-admin-1 unregistered
+2025-03-26T01:31:13.296+05:30  INFO 1432 --- [Job_Scheduler] [kafka-admin-client-thread | Job_Scheduler-admin-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2025-03-26T01:31:13.296+05:30  INFO 1432 --- [Job_Scheduler] [kafka-admin-client-thread | Job_Scheduler-admin-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-03-26T01:31:13.297+05:30  INFO 1432 --- [Job_Scheduler] [kafka-admin-client-thread | Job_Scheduler-admin-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2025-03-26T01:31:13.299+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-03-26T01:31:13.299+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@6e1cd6d]]
+2025-03-26T01:31:13.300+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-03-26T01:31:13.304+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-26T01:31:13.308+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-job-scheduler-group-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = job-scheduler-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2025-03-26T01:31:13.310+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2025-03-26T01:31:13.319+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.8.1
+2025-03-26T01:31:13.320+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 70d6ff42debf7e17
+2025-03-26T01:31:13.320+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1742932873319
+2025-03-26T01:31:13.320+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-job-scheduler-group-2, groupId=job-scheduler-group] Subscribed to topic(s): JobSchedulerTopic
+2025-03-26T01:31:13.323+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] o.s.s.quartz.SchedulerFactoryBean        : Starting Quartz Scheduler now
+2025-03-26T01:31:13.324+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] org.quartz.core.QuartzScheduler          : Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2025-03-26T01:31:13.330+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-job-scheduler-group-2, groupId=job-scheduler-group] Cluster ID: a1PRjsI8RpCKOwiw4U07hA
+2025-03-26T01:31:13.343+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] c.example.demo.JobSchedulerApplication   : Started JobSchedulerApplication in 8.122 seconds (process running for 1427.665)
+2025-03-26T01:31:13.349+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-scheduler-group-2, groupId=job-scheduler-group] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+2025-03-26T01:31:13.351+05:30  INFO 1432 --- [Job_Scheduler] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-03-26T01:31:13.352+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-scheduler-group-2, groupId=job-scheduler-group] (Re-)joining group
+2025-03-26T01:31:13.383+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-scheduler-group-2, groupId=job-scheduler-group] Request joining group due to: need to re-join with the given member-id: consumer-job-scheduler-group-2-c46d47f7-6e33-4443-a6ce-57ee5a50b6dc
+2025-03-26T01:31:13.384+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-scheduler-group-2, groupId=job-scheduler-group] (Re-)joining group
+2025-03-26T01:31:13.407+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-scheduler-group-2, groupId=job-scheduler-group] Successfully joined group with generation Generation{generationId=101, memberId='consumer-job-scheduler-group-2-c46d47f7-6e33-4443-a6ce-57ee5a50b6dc', protocol='range'}
+2025-03-26T01:31:13.408+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-scheduler-group-2, groupId=job-scheduler-group] Finished assignment for group at generation 101: {consumer-job-scheduler-group-2-c46d47f7-6e33-4443-a6ce-57ee5a50b6dc=Assignment(partitions=[JobSchedulerTopic-0])}
+2025-03-26T01:31:13.439+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-scheduler-group-2, groupId=job-scheduler-group] Successfully synced group in generation Generation{generationId=101, memberId='consumer-job-scheduler-group-2-c46d47f7-6e33-4443-a6ce-57ee5a50b6dc', protocol='range'}
+2025-03-26T01:31:13.439+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-scheduler-group-2, groupId=job-scheduler-group] Notifying assignor about the new Assignment(partitions=[JobSchedulerTopic-0])
+2025-03-26T01:31:13.440+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-job-scheduler-group-2, groupId=job-scheduler-group] Adding newly assigned partitions: JobSchedulerTopic-0
+2025-03-26T01:31:13.449+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition JobSchedulerTopic-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 0 rack: null)], epoch=0}}
+2025-03-26T01:31:13.450+05:30  INFO 1432 --- [Job_Scheduler] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : job-scheduler-group: partitions assigned: [JobSchedulerTopic-0]

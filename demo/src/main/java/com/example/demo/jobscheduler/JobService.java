@@ -11,6 +11,10 @@ import org.springframework.web.multipart.MultipartFile;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
+import java.io.*;
+import java.nio.file.Path;  // ✅ Correct import
+import java.nio.file.Paths; // ✅ Correct import
+import java.util.UUID;
 
 @Service
 public class JobService {
@@ -83,6 +87,7 @@ public class JobService {
             job.setBinaryPath(fileUrl);
         }
 
+        job.setCreatedAt(LocalDateTime.now());
         job.setUpdatedAt(LocalDateTime.now());
         Job savedJob = jobRepository.save(job);
 

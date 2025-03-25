@@ -89,34 +89,40 @@ public class QuartzJob implements Job {
             try {
 
                 // Extract fileUrl from metadata
-                String fileUrl = extractFileUrl(msg.getMetadata());
+                String binaryPath = extractBinaryPath(msg.getMetadata());
 
                 // Create JSON object with messageBody & fileUrl
-                JSONObject kafkaMessage = new JSONObject();
+                /*JSONObject kafkaMessage = new JSONObject();
                 kafkaMessage.put("messageBody", msg.getMessageBody());
-                kafkaMessage.put("fileUrl", fileUrl);
+                kafkaMessage.put("fileUrl", fileUrl);*/
 
                 // Send JSON to Kafka
-                kafkaProducerService.sendMessage("JobSchedulerTopic", kafkaMessage.toString());
-
                 //kafkaProducerService.sendMessage("JobSchedulerTopic", msg.getMessageBody());  // Use KafkaProducerService
+                kafkaProducerService.sendMessage("JobSchedulerTopic", msg.getMessageBody(), binaryPath);
+                //kafkaProducerService.sendMessage("JobSchedulerTopic", kafkaMessage.toString());
+
 
                 messageService.updateMessageStatus(msg.getId(), "SENT");
                 System.out.println("Message sent to Kafka: " + msg.getMessageBody());
             } catch (Exception e) {
                 messageService.updateMessageStatus(msg.getId(), "FAILED");
-                System.err.println("Error sending message: " + e.getMessage());
+                System.err.println("Error sending message to Kafka: " + e.getMessage());
             }
         }
     }
 
-    private String extractFileUrl(String metadataJson) {
+
+    private String extractBinaryPath(String metadataJson) {
+        if (metadataJson == null || metadataJson.isEmpty()) {
+            return "";
+        }
         try {
             JSONObject metadata = new JSONObject(metadataJson);
-            return metadata.optString("fileUrl", ""); // Default to empty string if key is missing
+            return metadata.optString("binaryPath", ""); // Default to empty string if key is missing
         } catch (Exception e) {
             System.err.println("Error parsing metadata JSON: " + e.getMessage());
             return "";
         }
     }
+
 }
