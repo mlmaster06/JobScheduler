@@ -17,3 +17,4 @@ public interface ScheduledMessageRepository extends JpaRepository<ScheduledMessa
     Optional<ScheduledMessage> findByScheduledTime(LocalDateTime scheduledTime);
 }
 
+//asd
