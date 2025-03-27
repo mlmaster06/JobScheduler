@@ -40,6 +40,8 @@ public class KafkaListeners {
             System.out.println("Received from Kafka: " + messageBody);
             System.out.println("Binary to execute: " + binaryPath);
 
+            messagingTemplate.convertAndSend("/JobSchedulerTopic/job-notifications", messageBody);
+
             //String localFilePath = minioService.downloadFile(binaryPath);
             String localPath = minioService.downloadFile(binaryPath);
 
