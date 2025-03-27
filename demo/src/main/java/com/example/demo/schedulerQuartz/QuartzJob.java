@@ -96,16 +96,15 @@ public class QuartzJob implements Job {
                 kafkaMessage.put("messageBody", msg.getMessageBody());
                 kafkaMessage.put("fileUrl", fileUrl);*/
 
-                //String binaryPath = metadata.optString("binary_path", "");
-
                 // ✅ Create JSON object with messageBody & binaryPath
                 JSONObject kafkaMessage = new JSONObject();
                 kafkaMessage.put("messageBody", msg.getMessageBody());
                 kafkaMessage.put("binaryPath", binaryPath);
 
+
                 // Send JSON to Kafka
                 //kafkaProducerService.sendMessage("JobSchedulerTopic", msg.getMessageBody());  // Use KafkaProducerService
-                kafkaProducerService.sendMessage("JobSchedulerTopic", kafkaMessage.toString(),binaryPath);
+                kafkaProducerService.sendMessage("JobSchedulerTopic", msg.getMessageBody(), binaryPath);
                 //kafkaProducerService.sendMessage("JobSchedulerTopic", kafkaMessage.toString());
 
 

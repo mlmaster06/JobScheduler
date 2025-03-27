@@ -51,3 +51,4 @@ public class KafkaConsumerConfig {
         return factory;
     }
 }
+//asd
