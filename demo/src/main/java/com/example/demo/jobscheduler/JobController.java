@@ -39,6 +39,7 @@ public class JobController {
     }
 
     // ✅ Create Job with multipart request
+    @CrossOrigin(origins = "*")
     @PostMapping(consumes = {"multipart/form-data"})
     public ResponseEntity<?> createJob(
             @RequestPart("job") String jobJson,

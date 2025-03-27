@@ -328,6 +328,8 @@ const JobScheduler = () => {
                 headers: { "Content-Type": "multipart/form-data" },
             });
 
+            console.log(response);
+            console.log(response.body);
             alert("Job scheduled successfully!");
             setJobs([...jobs, response.data]);
 
