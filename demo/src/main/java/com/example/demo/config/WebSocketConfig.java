@@ -12,7 +12,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.enableSimpleBroker("/JobSchedulerTopic");  // Clients subscribe to "/topic/job-notifications"
+        registry.enableSimpleBroker("/topic");  // Clients subscribe to "/topic/job-notifications"
         registry.setApplicationDestinationPrefixes("/app");
     }
 
