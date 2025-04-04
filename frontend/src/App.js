@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import JobScheduler from "./components/JobScheduler";
-import Notifications from "./components/Notifications";
-import { NotificationProvider } from "./components/Notifications";
+import Notifications from "./components/notifications";
+import { NotificationProvider } from "./components/notifications";
 
 /*function App() {
   return <JobScheduler />;

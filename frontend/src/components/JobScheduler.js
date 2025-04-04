@@ -123,7 +123,7 @@ export default JobScheduler;
 import React, { useState } from "react";
 import { Button, TextField, MenuItem, Select, FormControl, InputLabel, Card, CardContent, Typography, Box } from "@mui/material";
 import axios from "axios";
-import { NotificationButton } from "./Notifications";
+import { NotificationButton } from "./notifications";
 import { Link } from "react-router-dom";
 
 const JobScheduler = () => {
