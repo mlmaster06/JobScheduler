@@ -65,7 +65,7 @@ public class MinioService {
                         .method(Method.GET)
                         .bucket(bucketName)
                         .object(fileName)
-                        .expiry(7 * 24 * 60 * 60)  // 30 days in seconds
+                        .expiry(7 * 24 * 60 * 60)  // 7 days in seconds
                         .build()
         );
     }
@@ -75,9 +75,16 @@ public class MinioService {
         try {
             Path path = Paths.get(objectName);
             String fileName = Paths.get(objectName).getFileName().toString();
+            String downloadDir = "C:\\Users\\askha\\Downloads\\JobSchedulerUserFiles";
             // Define local file path
             //String localPath = "C:\\Users\\askha\\Downloads\\JobSchedulerUserFiles" + objectName.substring(objectName.lastIndexOf("/") + 1);
-            String localPath = "C:\\Users\\askha\\Downloads\\JobSchedulerUserFiles" + fileName;
+            String localPath = "C:\\Users\\askha\\Downloads\\JobSchedulerUserFiles" + File.separator + fileName;
+
+            // Ensure the download directory exists
+            File directory = new File(downloadDir);
+            if (!directory.exists()) {
+                directory.mkdirs();
+            }
 
             // Check if file already exists locally
             File file = new File(localPath);
@@ -86,16 +93,29 @@ public class MinioService {
                 return localPath;
             }
 
+            //Get file stream from MinIO
             InputStream inputStream = getFileStream(objectName);
-            FileOutputStream outputStream = new FileOutputStream(localPath);
+
+
+            /*FileOutputStream outputStream = new FileOutputStream(localPath);
             byte[] buffer = new byte[1024];
             int bytesRead;
 
             while ((bytesRead = inputStream.read(buffer)) != -1) {
                 outputStream.write(buffer, 0, bytesRead);
             }
+            outputStream.close();*/
 
-            outputStream.close();
+
+            // ✅ Write file to disk
+            try (FileOutputStream outputStream = new FileOutputStream(localPath)) {
+                byte[] buffer = new byte[1024];
+                int bytesRead;
+                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                    outputStream.write(buffer, 0, bytesRead);
+                }
+            }
+
             inputStream.close();
             return localPath;
         } catch (Exception e) {
