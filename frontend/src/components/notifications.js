@@ -43,7 +43,8 @@ export default Notifications;*/
 import React, { useState, useEffect } from "react";
 import { Card, CardContent, Typography } from "@mui/material";
 import SockJS from "sockjs-client";
-import Stomp from "stompjs";
+//import Stomp from "stompjs";
+import { Client } from '@stomp/stompjs';
 
 const Notifications = () => {
     const [notifications, setNotifications] = useState([]);
@@ -97,7 +98,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { Card, CardContent, Typography, Badge, Button } from "@mui/material";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SockJS from "sockjs-client";
-import Stomp from "stompjs";
+//import Stomp from "stompjs";
+import { Client } from '@stomp/stompjs';
 
 // Create a context to share notification state across components
 export const NotificationContext = React.createContext({
@@ -116,7 +118,7 @@ export const NotificationProvider = ({ children }) => {
     const [notifications, setNotifications] = useState([]);
     const [unreadCount, setUnreadCount] = useState(0);
 
-    useEffect(() => {
+    /*useEffect(() => {
         // Connect to WebSocket
         const socket = new SockJS("http://localhost:8080/ws");
         const client = Stomp.over(socket);
@@ -145,7 +147,44 @@ export const NotificationProvider = ({ children }) => {
                 stompClient.disconnect();
             }
         };
+    }, []);*/
+
+
+    useEffect(() => {
+        const client = new Client({
+            brokerURL: undefined, // we're using SockJS instead
+            webSocketFactory: () => new SockJS("http://localhost:8080/ws"),
+            reconnectDelay: 5000,
+            onConnect: () => {
+                console.log("Connected to WebSocket");
+
+                client.subscribe("/topic/job-notifications", (message) => {
+                    if (message.body) {
+                        const newNotification = {
+                            message: message.body,
+                            timestamp: new Date().toLocaleTimeString(),
+                            read: false
+                        };
+
+                        setNotifications((prev) => [newNotification, ...prev]);
+                        setUnreadCount((prev) => prev + 1);
+                    }
+                });
+            },
+            onStompError: (frame) => {
+                console.error("Broker error", frame);
+            }
+        });
+
+        client.activate();
+        setStompClient(client);
+
+        return () => {
+            client.deactivate();
+        };
     }, []);
+
+
 
     const value = {
         notifications,
