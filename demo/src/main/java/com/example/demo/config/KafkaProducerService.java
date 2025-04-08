@@ -36,9 +36,28 @@ public class KafkaProducerService {
             jsonMessage.put("binaryPath", binaryPath);
 
             // Send JSON message to Kafka
-            kafkaTemplate.send(topic, jsonMessage.toString());
+            //kafkaTemplate.send(topic, jsonMessage.toString());
+            /*kafkaTemplate.send(topic, jsonMessage.toString())
+                    .addCallback(
+                            result -> System.out.println("Message sent successfully: " + result.getRecordMetadata()),
+                            ex -> System.out.println("Failed to send message: " + ex.getMessage())
+                    );*/
 
-            System.out.println("Sent Kafka Message: " + jsonMessage);
+            kafkaTemplate.send(topic, jsonMessage.toString())
+                    .whenComplete((result, ex) -> {
+                        if (ex == null) {
+                            System.out.println("✅ Kafka message sent successfully!");
+                            System.out.println("➡ Topic: " + result.getRecordMetadata().topic());
+                            System.out.println("➡ Partition: " + result.getRecordMetadata().partition());
+                            System.out.println("➡ Offset: " + result.getRecordMetadata().offset());
+                        } else {
+                            System.err.println("❌ Failed to send Kafka message: " + ex.getMessage());
+                            ex.printStackTrace();
+                        }
+                    });
+
+
+            //System.out.println("Sent Kafka Message: " + jsonMessage);
         } catch (Exception e) {
             System.err.println("Error sending Kafka message: " + e.getMessage());
         }

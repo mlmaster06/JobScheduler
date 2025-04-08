@@ -2,6 +2,7 @@ package com.example.demo.config;
 
 import com.example.demo.jobscheduler.MinioService;
 import com.example.demo.jobscheduler.WebSocketController;
+import jakarta.annotation.PostConstruct;
 import lombok.Value;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -31,6 +32,11 @@ public class KafkaListeners {
         this.messagingTemplate = messagingTemplate;
         this.minioService = minioService;
         this.webSocketController = webSocketController;
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("✅ KafkaListeners bean initialized.");
     }
 
     @KafkaListener(
