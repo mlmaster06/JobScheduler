@@ -1,3 +1,4 @@
+/*
 package com.example.demo.config;
 
 import com.example.demo.schedulerQuartz.QuartzJob;
@@ -23,7 +24,7 @@ public class QuartzConfig {
                 .forJob(quartzJobDetail)
                 .withIdentity("QuartzTrigger")
                 .withSchedule(SimpleScheduleBuilder.simpleSchedule()
-                        .withIntervalInSeconds(30)  // Runs every 30 seconds
+                        .withIntervalInSeconds(2)  // Runs every 2 seconds
                         .repeatForever())
                 .build();
     }
@@ -31,6 +32,7 @@ public class QuartzConfig {
     @Bean
     public SchedulerFactoryBean schedulerFactoryBean() {
         SchedulerFactoryBean factoryBean = new SchedulerFactoryBean();
+        factoryBean.setAutoStartup(true);
         return factoryBean;
     }
 
@@ -42,3 +44,4 @@ public class QuartzConfig {
 }
 
 //asd
+*/

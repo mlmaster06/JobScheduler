@@ -1,3 +1,4 @@
+/*
 package com.example.demo.schedulerQuartz;
 
 import com.example.demo.config.KafkaProducerService;
@@ -31,7 +32,8 @@ public class QuartzJob implements Job {
     //private KafkaTemplate<String, String> kafkaTemplate;
 
 
-    /*public void execute(JobExecutionContext context) {
+    */
+/*public void execute(JobExecutionContext context) {
         LocalDateTime now = LocalDateTime.now();
 
         List<ScheduledMessage> messages = messageService.getPendingMessagesBefore(now);
@@ -51,13 +53,19 @@ public class QuartzJob implements Job {
                 System.err.println("Error sending message: " + e.getMessage());
             }
         }
-    }*/
+    }*//*
 
 
-    /*public void execute(JobExecutionContext context) {
+
+    */
+/*public void execute(JobExecutionContext context) {
         JobDataMap jobDataMap = context.getJobDetail().getJobDataMap();
-        *//*messageService = (ScheduledMessageService) jobDataMap.get("messageService");
+        *//*
+*/
+/*messageService = (ScheduledMessageService) jobDataMap.get("messageService");
         kafkaTemplate = (KafkaTemplate<String, String>) jobDataMap.get("kafkaTemplate");*//*
+*/
+/*
 
         ScheduledMessageService messageService = (ScheduledMessageService) jobDataMap.get("messageService");
         KafkaTemplate<String, String> kafkaTemplate = (KafkaTemplate<String, String>) jobDataMap.get("kafkaTemplate");
@@ -79,7 +87,8 @@ public class QuartzJob implements Job {
                 System.err.println("Error sending message: " + e.getMessage());
             }
         }
-    }*/
+    }*//*
+
 
     @Override
     public void execute(JobExecutionContext context) {
@@ -92,15 +101,18 @@ public class QuartzJob implements Job {
                 String binaryPath = extractBinaryPath(msg.getMetadata());
 
                 // Create JSON object with messageBody & fileUrl
-                /*JSONObject kafkaMessage = new JSONObject();
+                */
+/*JSONObject kafkaMessage = new JSONObject();
                 kafkaMessage.put("messageBody", msg.getMessageBody());
-                kafkaMessage.put("fileUrl", fileUrl);*/
+                kafkaMessage.put("fileUrl", fileUrl);*//*
+
 
                 // ✅ Create JSON object with messageBody & binaryPath
                 JSONObject kafkaMessage = new JSONObject();
                 kafkaMessage.put("messageBody", msg.getMessageBody());
                 kafkaMessage.put("binaryPath", binaryPath);
 
+                System.out.println(msg.getMessageBody());
 
                 // Send JSON to Kafka
                 //kafkaProducerService.sendMessage("JobSchedulerTopic", msg.getMessageBody());  // Use KafkaProducerService
@@ -131,4 +143,4 @@ public class QuartzJob implements Job {
         }
     }
 
-}
+}*/

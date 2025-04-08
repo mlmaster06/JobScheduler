@@ -47,6 +47,8 @@ public class KafkaProducerService {
                             ex -> System.out.println("Failed to send message: " + ex.getMessage())
                     );*/
 
+            System.out.println(messageBody);
+
             kafkaTemplate.send(topic, jsonMessage.toString())
                     .whenComplete((result, ex) -> {
                         if (ex == null) {
