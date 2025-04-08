@@ -1,5 +1,7 @@
 package com.example.demo.config;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -7,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class KafkaProducerService {
+
+    private static final Logger logger = LoggerFactory.getLogger(KafkaProducerService.class);
 
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
@@ -23,7 +27,7 @@ public class KafkaProducerService {
     public void sendMessage(String topic, String messageBody, String binaryPath) {
         try {
             if (messageBody == null || messageBody.isEmpty()) {
-                System.err.println("Error: messageBody is empty. Skipping Kafka message.");
+                logger.warn("Error: messageBody is empty. Skipping Kafka message.");
                 return;
             }
             if (binaryPath == null) {
@@ -46,20 +50,19 @@ public class KafkaProducerService {
             kafkaTemplate.send(topic, jsonMessage.toString())
                     .whenComplete((result, ex) -> {
                         if (ex == null) {
-                            System.out.println("✅ Kafka message sent successfully!");
-                            System.out.println("➡ Topic: " + result.getRecordMetadata().topic());
-                            System.out.println("➡ Partition: " + result.getRecordMetadata().partition());
-                            System.out.println("➡ Offset: " + result.getRecordMetadata().offset());
+                            logger.info("✅ Kafka message sent successfully!");
+                            logger.debug("➡ Topic: " + result.getRecordMetadata().topic());
+                            logger.debug("➡ Partition: " + result.getRecordMetadata().partition());
+                            logger.debug("➡ Offset: " + result.getRecordMetadata().offset());
                         } else {
-                            System.err.println("❌ Failed to send Kafka message: " + ex.getMessage());
-                            ex.printStackTrace();
+                            logger.error("❌ Failed to send Kafka message: " ,ex);
                         }
                     });
 
 
             //System.out.println("Sent Kafka Message: " + jsonMessage);
         } catch (Exception e) {
-            System.err.println("Error sending Kafka message: " + e.getMessage());
+            logger.error("Error sending Kafka message: " + e);
         }
     }
 
