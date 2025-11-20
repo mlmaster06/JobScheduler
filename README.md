@@ -64,4 +64,4 @@ Frontend
 🚀 Future Improvements
 • Migrate to YugabyteDB for horizontally scalable storage
 • Introduce Next.js for server-side rendering & performance
-• Expand and refine the UI for an improved developer experience.
+• Expand and refine the UI for an improved developer experience
