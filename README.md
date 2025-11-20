@@ -3,9 +3,7 @@
 A powerful and flexible Job Scheduling System that allows users to schedule backend tasks, execute binaries, and trigger asynchronous Kafka messages. Includes a Spring Boot backend and a React frontend for complete workflow management.
 
 🧩 Overview
-
 The Job Scheduler provides a centralized platform to:
-
 • Run jobs at specific times
 • Execute binaries (JAR/NPM) stored in MinIO
 • Trigger delayed messages
