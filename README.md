@@ -1,81 +1,67 @@
-"# JobScheduler" 
+🚀 Job Scheduler
 
-Job Scheduler
+A powerful and flexible Job Scheduling System that allows users to schedule backend tasks, execute binaries, and trigger asynchronous Kafka messages. Includes a Spring Boot backend and a React frontend for complete workflow management.
 
-Overview
+🧩 Overview
+The Job Scheduler provides a centralized platform to:
+• Run jobs at specific times
+• Execute binaries (JAR/NPM) stored in MinIO
+• Trigger delayed messages
+• Schedule recurring jobs (hourly/daily/weekly/monthly)
+• Track execution status and metadata
+• Manage everything via a clean UI
 
-This project is a Job Scheduler that allows users to schedule backend tasks (jobs) to run at specific times, execute binaries (e.g., JAR files or NPM packages), and manage asynchronous messaging using Kafka. It includes both a backend API and a frontend user interface.
+✨ Features
 
-Features
+🔹 Job Scheduling Capabilities
 
-1. Job Scheduling Capabilities
+1. Specific Time Scheduling
+a) Schedule jobs at an exact timestamp.
+b) Full support for multiple time zones.
+c) Runs the associated binary and tracks execution state:
+   i) Success
+   ii) Failure
+   iii) In-Progress
+   iv) Skipped
 
-•	Specific Time Scheduling:
+2. Immediate Execution
+a) Execute any job instantly.
+b) Result and logs are stored for auditing.
 
-	Users can schedule jobs at a specific time with support for different time zones.
+3. Delayed Messaging
+a) Send a message after a specified delay (e.g., after 10 minutes).
+b) Messages are dispatched asynchronously via Kafka.
+c) Supports client-provided metadata.
 
-	The scheduled job runs a binary and stores execution status (success, failure, etc.).
+🔹 Frequency-Based Scheduling
+Recurring jobs supported:
+• Hourly
+• Daily
+• Weekly (select days)
+• Monthly (select dates)
 
-•	Immediate Execution:
+📘 Example Use Cases
+• One-Time Job: Run a job at 11 AM IST once.
+• Weekly Job: Execute at 12 PM GMT on Tuesdays & Fridays.
+• Delayed Reminder: Send a Kafka message 10 minutes later.
 
-	Allows jobs to be executed immediately with status tracking.
+🛠️ Technology Stack
 
-•	Delayed Messaging:
+Backend
+• Java + Spring Boot — business logic & scheduler
+• Kafka — asynchronous messaging
+• MinIO — binary (JAR/NPM) storage
+• PostgreSQL — message & job metadata storage
 
-	Schedule a message to be sent after a specified number of minutes.
+Frontend
+• React.js — responsive client UI
 
-	Messages are sent asynchronously using Kafka with client-provided metadata.
+📝 Assumptions
+• Kafka handles all async message deliveries.
+• MinIO stores job execution binaries.
+• PostgreSQL persists job logs, schedules, and metadata.
 
-2. Frequency-Based Scheduling
-
-•	Recurring Jobs:
-                    
-	Hourly
-
-	Daily
-
-	Weekly (specific days)
-
-	Monthly (specific dates)
-
-3. Example Use Cases
-
-•	One-Time Job: Schedule a job to run at 11 AM IST once.
-
-•	Weekly Job: Schedule a job to run at 12 PM GMT on Tuesdays and Fridays.
-
-•	Delayed Reminder: Schedule a message to be sent after 10 minutes via Kafka.
-
-
-Technology Stack
-
-•	Backend
-
-	Java & Spring Boot: Core framework for backend logic.
-
-	Kafka: Used for asynchronous messaging.
-
-	MinIO: Used for storing binaries.
-
-	PostgreSQL: Used for storing messages and message details.
-
-•	Frontend
-
-	React: Used for building the UI.
-
-Assumptions
-
-•	Kafka is used for handling asynchronous messaging.
-
-•	MinIO is used for storing job execution binaries.
-
-•	PostgreSQL is used for storing messages and message details.
-
-Future Improvements
-
-•	Implementing YugabyteDB for scalable storage.
-
-•	Adding Next.js for server-side rendering improvements.
-
-•	Expanding UI for better user experience
-
+🚀 Future Improvements
+• Migrate to YugabyteDB for horizontally scalable storage
+• Introduce Next.js for server-side rendering & performance
+• Expand and refine the UI for an improved developer experience.
